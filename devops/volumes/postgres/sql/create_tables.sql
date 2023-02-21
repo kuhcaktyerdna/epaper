@@ -1,0 +1,11 @@
+-- Creation of product table
+CREATE TABLE IF NOT EXISTS DEVICE (
+  ID INT NOT NULL,
+  NEWSPAPER_NAME varchar(200) NOT NULL,
+  WIDTH INT,
+  HEIGHT INT,
+  DPI INT,
+  UPLOAD_TIME,
+  FILENAME varchar(200) NOT NULL
+  PRIMARY KEY (id)
+);

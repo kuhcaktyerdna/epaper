@@ -1,0 +1,61 @@
+<xs:schema elementFormDefault="qualified"
+           targetNamespace="http://example.com"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://example.com">
+
+    <xs:element name="epaperRequest" type="epaper"/>
+
+    <xs:element name="epaperResponse" type="epaper"/>
+
+    <xs:complexType name="epaper">
+        <xs:sequence>
+            <xs:element type="device" name="deviceInfo" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element type="pages" name="getPages" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="device">
+        <xs:sequence>
+            <xs:element type="screen" name="screenInfo"/>
+            <xs:element type="os" name="osInfo"/>
+            <xs:element type="app" name="appInfo"/>
+        </xs:sequence>
+        <xs:attribute type="xs:string" name="name"/>
+        <xs:attribute type="xs:string" name="id"/>
+    </xs:complexType>
+
+    <xs:complexType name="pages">
+        <xs:attribute type="xs:long" name="editionDefId"/>
+        <xs:attribute type="xs:date" name="publicationDate"/>
+    </xs:complexType>
+
+    <xs:complexType name="screen">
+        <xs:attribute type="xs:long" name="width"/>
+        <xs:attribute type="xs:long" name="height"/>
+        <xs:attribute type="xs:long" name="dpi"/>
+    </xs:complexType>
+
+    <xs:complexType name="os">
+        <xs:attribute type="xs:string" name="name"/>
+        <xs:attribute type="xs:float" name="version"/>
+    </xs:complexType>
+
+    <xs:complexType name="app">
+        <xs:sequence>
+            <xs:element name="newspaperName">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="version">
+                <xs:simpleType>
+                    <xs:restriction base="xs:long"/>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>
