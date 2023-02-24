@@ -1,0 +1,17 @@
+== Epaper REST service
+
+'''
+
+=== Local startup
+From root project directory execute the following command
+
+`./mvnw clean install && docker-compose -f ./devops/docker-compose.yml up -d --build`.
+
+
+
+'''
+
+==== API endpoints
+API endpoints are documented with the help of swagger. To review all existing endpoints, start project and visit http://localhost:8080/api/v1/swagger-ui.html#/
+
+Samples are also available in `sample` dir in `sample.http` file

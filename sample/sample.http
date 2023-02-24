@@ -1,0 +1,39 @@
+### CREATE NEWSPAPER
+
+POST http://localhost:8080/api/v1/newspaper
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="device.xml"
+
+< ./device.xml
+
+--boundary
+Content-Disposition: form-data; name="advertType"
+
+1
+--boundary
+
+### GET ALL
+GET http://localhost:8080/api/v1/newspaper/all
+
+### GET ALL FILTERED
+GET http://localhost:8080/api/v1/newspaper/filtered
+Content-Type: application/json
+
+{
+  "filter": {
+    "paramName": "deviceDpi",
+    "paramValue": "160"
+  },
+  "pagination": {
+    "pageNumber": 0,
+    "pageSize": 2
+  }
+}
+
+### GET BY ID
+GET http://localhost:8080/api/v1/newspaper/11
+
+### DELETE BY ID
+DELETE http://localhost:8080/api/v1/newspaper/11

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <epaperRequest>
     <deviceInfo name="Browser" id="test@comp">
-        <screenInfo width="1280" height="752" dpi="160"/>
+        <screenInfo width="640" height="480" dpi="160"/>
         <osInfo name="Browser" version="1.0"/>
         <appInfo>
             <newspaperName>abb</newspaperName>
